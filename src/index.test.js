@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import SmartTable from ".";
 
-describe('ExampleComponent', () => {
-  it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
-  })
-})
+describe("SmartTable", () => {
+	it("is truthy", () => {
+		expect(SmartTable).toBeTruthy();
+	});
+});

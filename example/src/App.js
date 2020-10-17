@@ -45,7 +45,6 @@ const App = () => {
 					dataIndex: "date",
 					key: "date",
 					dateRange: "date",
-					s,
 				},
 			]}
 		/>

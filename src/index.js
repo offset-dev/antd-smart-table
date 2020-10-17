@@ -5,8 +5,6 @@ import Highlighter from "react-highlight-words";
 import propTypes from "prop-types";
 import moment from "moment";
 
-import "antd/dist/antd.css";
-
 SmartTable.propTypes = {
 	onRowsChange: propTypes.function,
 	columns: propTypes.array.isRequired,

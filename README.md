@@ -23,6 +23,7 @@ yarn add @offset-dev/antd-smart-table
 
 ```jsx
 import SmartTable from "@offset-dev/antd-smart-table";
+import "antd/dist/antd.css";
 
 const dataSource = [
     {

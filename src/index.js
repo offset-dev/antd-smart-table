@@ -6,7 +6,7 @@ import propTypes from "prop-types";
 import moment from "moment";
 
 SmartTable.propTypes = {
-	onRowsChange: propTypes.function,
+	onRowsChange: propTypes.func,
 	columns: propTypes.array.isRequired,
 };
 

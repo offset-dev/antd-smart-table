@@ -1,5 +1,6 @@
 import React from "react";
 import SmartTable from "@offset-dev/antd-smart-table";
+import "antd/dist/antd.css";
 
 const dataSource = [
 	{

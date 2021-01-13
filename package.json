@@ -51,8 +51,8 @@
     "dist"
   ],
   "dependencies": {
-    "@ant-design/icons": "^4.2.2",
-    "antd": "^4.7.0",
+    "@ant-design/icons": "^4.3.0",
+    "antd": "^4.10.2",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react-highlight-words": "^0.16.0"

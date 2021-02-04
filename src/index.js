@@ -6,7 +6,7 @@ import propTypes from "prop-types";
 import moment from "moment";
 
 SmartTable.propTypes = {
-	onRowsChange: propTypes.function,
+	onRowsChange: propTypes.func,
 	columns: propTypes.array.isRequired,
 };
 
@@ -58,11 +58,11 @@ export default function SmartTable(props) {
 				</div>
 			);
 		},
-		filterIcon: filtered => {
+		filterIcon: () => {
 			if (dateRange) {
-				return <FilterFilled style={{ color: filtered ? "#1890ff" : undefined }} />;
+				return <FilterFilled />;
 			} else {
-				return <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />;
+				return <SearchOutlined />;
 			}
 		},
 		onFilter: (value, record) => {

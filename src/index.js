@@ -18,7 +18,7 @@ export default function SmartTable(props) {
 	});
 
 	// noinspection JSUnusedGlobalSymbols
-	const getSearchColumnProps = (dataIndex, dateRange) => ({
+	const getSearchColumnProps = (dataIndex, title, dateRange) => ({
 		filterDropdown: function f({ setSelectedKeys, selectedKeys, confirm, clearFilters }) {
 			return (
 				<div style={{ padding: 8 }}>
@@ -40,7 +40,7 @@ export default function SmartTable(props) {
 						<Input
 							onChange={e => setSelectedKeys(e.currentTarget.value ? [e.currentTarget.value] : [])}
 							onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
-							placeholder={`${props.spanish ? "Buscar" : "Search"} ${dataIndex}`}
+							placeholder={`${props.spanish ? "Buscar" : "Search"} ${title}`}
 							style={{ width: 188, marginBottom: 8, display: "block" }}
 							value={selectedKeys[0]}
 						/>
@@ -114,12 +114,12 @@ export default function SmartTable(props) {
 				if (c.search) {
 					return {
 						key: c.search,
-						...getSearchColumnProps(c.search),
+						...getSearchColumnProps(c.search, c.title),
 						...c,
 					};
 				} else if (c.dateRange) {
 					return {
-						...getSearchColumnProps(c.dataIndex, true),
+						...getSearchColumnProps(c.dataIndex, c.title, true),
 						...c,
 					};
 				} else {

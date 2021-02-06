@@ -109,6 +109,26 @@ export default function SmartTable(props) {
 		<Table
 			onChange={(a, b, c, d) => props?.onRowsChange?.(d.currentDataSource.length)}
 			pagination={{ defaultPageSize: 30 }}
+			locale={
+				props.spanish
+					? {
+							emptyText: "No hay Información por mostrar",
+							filterTitle: "Filtrar",
+							filterConfirm: "OK",
+							filterReset: "Reiniciar",
+							filterEmptyText: "No hay filtros",
+							selectAll: "Seleccionar página",
+							selectInvert: "Invertir selección",
+							selectionAll: "Seleccionar todo",
+							sortTitle: "Ordenar",
+							expand: "Expandir",
+							collapse: "Colapsar",
+							triggerDesc: "Click para ordenar descendiente",
+							triggerAsc: "Click para ordenar ascendiente",
+							cancelSort: "Click para cancelar orden",
+					  }
+					: {}
+			}
 			{...props}
 			columns={props.columns.map(c => {
 				if (c.search) {

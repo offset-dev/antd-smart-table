@@ -8,6 +8,7 @@ import moment from "moment";
 SmartTable.propTypes = {
 	onRowsChange: propTypes.func,
 	columns: propTypes.array.isRequired,
+	spanish: propTypes.bool,
 };
 
 export default function SmartTable(props) {
@@ -27,9 +28,9 @@ export default function SmartTable(props) {
 								onChange={e => setSelectedKeys([e?.[0] + "/" + e?.[1]])}
 								onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
 								ranges={{
-									"Last 7 Days": [moment().subtract(7, "days").startOf("day"), moment()],
-									"Last 15 Days": [moment().subtract(15, "days").startOf("day"), moment()],
-									"Last 30 Days": [moment().subtract(30, "days").startOf("day"), moment()],
+									[props.spanish ? "Últimos 7 Dias" : "Last 7 Days"]: [moment().subtract(7, "days").startOf("day"), moment()],
+									[props.spanish ? "Últimos 15 Dias" : "Last 15 Days"]: [moment().subtract(15, "days").startOf("day"), moment()],
+									[props.spanish ? "Últimos 30 Dias" : "Last 30 Days"]: [moment().subtract(30, "days").startOf("day"), moment()],
 								}}
 								style={{ width: 300, marginBottom: 8 }}
 							/>
@@ -39,7 +40,7 @@ export default function SmartTable(props) {
 						<Input
 							onChange={e => setSelectedKeys(e.currentTarget.value ? [e.currentTarget.value] : [])}
 							onPressEnter={() => handleSearch(selectedKeys, confirm, dataIndex)}
-							placeholder={`Search ${dataIndex}`}
+							placeholder={`${props.spanish ? "Buscar" : "Search"} ${dataIndex}`}
 							style={{ width: 188, marginBottom: 8, display: "block" }}
 							value={selectedKeys[0]}
 						/>
@@ -50,10 +51,10 @@ export default function SmartTable(props) {
 						size="small"
 						style={{ width: 90, marginRight: 8 }}
 						type="primary">
-						{dateRange ? "Filter" : "Search"}
+						{dateRange ? (props.spanish ? "Filtrar" : "Filter") : props.spanish ? "Buscar" : "Search"}
 					</Button>
 					<Button onClick={() => handleReset(clearFilters)} size="small" style={{ width: 90 }}>
-						Reset
+						{props.spanish ? "Reiniciar" : "Reset"}
 					</Button>
 				</div>
 			);

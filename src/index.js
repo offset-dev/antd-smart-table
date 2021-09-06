@@ -83,7 +83,7 @@ export default function SmartTable(props) {
 						autoEscape
 						highlightStyle={{ backgroundColor: "#ffc069", padding: 0 }}
 						searchWords={[state.searchedText]}
-						textToHighlight={text.toString()}
+						textToHighlight={text?.toString() ?? ""}
 					/>
 				);
 			} else {
